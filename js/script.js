@@ -7,8 +7,11 @@ function handleSubmit (event) {
     event.preventDefault();
     
     let inputValue = element.inputNumber.value;
+    let hitHunch = inputValue == randomNumber;
+    
     attemptsNumber++;
-    if(inputValue == randomNumber) {
+    
+    if(hitHunch) {
         element.toggleScreen();
         element.message.innerHTML = `Acertou em ${attemptsNumber} tentativas`;
     }
@@ -26,4 +29,4 @@ element.btnSubmit.addEventListener("click",handleSubmit);
 
 element.btnTryAgain.addEventListener("click",handleTryAgain);
 
-document.addEventListener("keydown", event => if(event.key == "Enter") handleSubmit());
+document.addEventListener("keydown", event => if(event.key === "Enter") handleSubmit());
