@@ -21,13 +21,9 @@ function handleTryAgain() {
     element.toggleScreen();
 }
 
-element.btnSubmit.addEventListener("click",handleSubmit);
 
+element.btnSubmit.addEventListener("click",handleSubmit);
 
 element.btnTryAgain.addEventListener("click",handleTryAgain);
 
-document.addEventListener("keydown", event => {
-    if(event.key == "Enter") {
-        handleSubmit();
-    }
-})
+document.addEventListener("keydown", event => if(event.key == "Enter") handleSubmit());
